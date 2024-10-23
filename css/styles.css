@@ -1,19 +1,171 @@
-/* Use import to split up your CSS into manageable chunks */
-@import url("./reset.css");
-/* Files that are only needed to be imported are called partials */
-/* These are marked with an underscore: */
-@import url("./variables.css");
-/* Feel free to add as many of these imports as you need */
+* {
+   margin: 0;
+   padding: 0;
+}
 
 body {
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+nav, #menu-checkbox {
+    display: none;
 }
+
+#menu-checkbox:checked ~ nav {
+    display: block;
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #94A1A8;
+    height: 50px;
+    font-size: 20px;
+  }
+
+nav {
+    position: absolute;
+    background-color: rgb(172, 175, 175);
+    top: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    }
+
+nav a {
+    display: block;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+a:hover {
+    color: #fefefe;
+}
+
+.logo{
+    max-width: 100px;
+    height: 60px;
+   }
+
+   .logo-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   margin: 30px;
+   }
+   
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 15px;
+    font-size: 20px;
+}
+
+ 
+.image-container {
+    width: 100vw;
+    height: auto;
+}
+
+.fit-img {
+    height: auto;
+    width: 100%;
+    background-size: cover;
+
+}
+
+h1, h2 {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    font-style: normal;
+    margin: 10px;
+}
+
+.paragraph1, .paragraph2 {
+    margin: 9px;
+    padding: 10px;
+    text-align: left;
+    font-family: crimsom text;
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+
+}
+
+
+@media (min-width: 600px) {
+    nav {
+        position: static;
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 20px;
+        }
+    .menu-icon {
+        display: none;
+    }    
+
+    nav a {
+        display: inline-block;
+        padding: 0;
+        font-size: 16px;
+        color: black;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+
+    .logo-container {
+        margin-left: 0%;
+        padding: 0%;
+
+    }
+    nav {
+        margin: 0 auto;
+    }
+
+    .nav-icons {
+        margin-left: auto;
+       
+    }
+
+    .image-container {
+        width: 100vw;
+        height: auto;
+    }
+
+    .fit-img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
