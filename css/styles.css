@@ -74,16 +74,25 @@ a:hover {
 
  
 .image-container {
-    width: 100vw;
-    height: auto;
+    max-width: 100% ;
+    overflow: hidden;
 }
 
 .fit-img {
     height: auto;
     width: 100%;
     background-size: cover;
+    display: block;
 
 }
+
+.collections {
+
+
+
+}
+
+
 
 h1, h2 {
     display: flex;
