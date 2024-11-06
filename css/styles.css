@@ -58,12 +58,13 @@ a:hover {
 
 .logo{
     width: 100px;
-    height: 50px;
+    height: 60px;
+    padding-top: 10px;
    }
 
    .logo-container {
    display: flex;
-   
+   justify-content: space-between;
    align-items: center;
    
    }
@@ -71,6 +72,7 @@ a:hover {
    .menu-icon {
     display: block;
     font-size: 24px;
+    margin-left: 10px;
    }
 
 .nav-icons {
@@ -134,7 +136,7 @@ a:hover {
 .responsive-image {
     width: 100%;
     height: auto;
-    
+   
 }
 
 .cta-button {
@@ -154,13 +156,19 @@ a:hover {
     background-color:  #FFFFFF;
 }
 
-h1, h2, h3{
+h1, h3 {
     display: flex;
     justify-content: center;
     font-family: sans-serif, Arial, Helvetica;
+    font-weight: 500;
+    padding: 20px;
     font-size: 20px;
-    font-style: normal;
-    padding: 15px;
+}
+
+h2 {
+    font-size:medium;
+    padding-left: 10px;
+    margin: 10px;
 }
 
 
@@ -216,12 +224,12 @@ h1, h2, h3{
 }
 
 .footer-container-top {
-    position: relative;
+   position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
 }
- #email {
+  #footer-email{
     border: none;
     border-bottom: 1px solid black;
     text-align: center;
@@ -236,10 +244,14 @@ h1, h2, h3{
    }
 
    .subscribe-button {
-    position: absolute;
-    width: 30%;
+   position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
     height: 22px;
-    bottom: 2px;
+    bottom: 75px;
+    margin-left: 120px;
     background-color: #A0C8DE;
     }
 
@@ -247,6 +259,7 @@ h1, h2, h3{
        text-align: center;
        line-height: 1.5;
        margin: 3px;
+       margin-left: 10px;
     }
 
     .fa-brands {
@@ -313,8 +326,54 @@ h1, h2, h3{
     font-style: normal;
 }
 
+ main p{
+    padding-left: 10px;
+    margin: 10px;
+}
 
-@media (min-width: 600px) {
+
+.contact-us-form input, textarea {
+    width: 90%;
+    padding:8px ;
+    border-radius: 10px;
+    margin: 5px 20px;
+} 
+.submit-btn {
+    width: 65px;
+    height: 30px;
+    background-color: #A0C8DE;
+    border-radius: 5px;
+    box-shadow: inset;
+    margin-left: 23px;
+}
+
+.success-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.order-confirmation-icon {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.go-to-homepage-btn {
+    width: 160px;
+    height: 35px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    background-color: #A0C8DE;
+    box-shadow: inset black;
+}
+
+
+@media (min-width: 590px) {
     nav {
         position: static;
         display: flex;
@@ -350,6 +409,8 @@ h1, h2, h3{
 
     .logo {
         margin-right: auto;
+        padding-left: 15px;
+        padding-top: 10px;
     }
 
     .logo-container {
@@ -363,7 +424,7 @@ h1, h2, h3{
 
     .nav-icons {
        
-        margin: 60px;
+        margin: 20px;
        
     }
 
@@ -386,9 +447,9 @@ h1, h2, h3{
         max-width: 350px;
     }
 
-    h1, h2 {
-        font-weight: 600;
-        font-size: 32px;
+    h1, h3 {
+        font-weight: 500;
+        font-size: 22px;
     }
     
     .collections-container{
@@ -397,7 +458,7 @@ h1, h2, h3{
 
     .responsive-image {
         width: 100%;
-        height: 450px;
+        height: 330px;
     }
 
     .n-arrival, .f-women, .f-men {
@@ -407,8 +468,8 @@ h1, h2, h3{
     }
 
     .cta-button {
-        height: 50px;
-        font-size: 16px;
+        height: 35px;
+        font-size: 14px;
         background-color: #A0C8DE;
     }
 
@@ -425,8 +486,9 @@ h1, h2, h3{
        height: 275px;}
 
        .subscribe-button {
-        height: 25px;
-        bottom: 2px;
+        height: 28px;
+        bottom: 72px;
+        margin-left: 125px;
         }
 
 
@@ -436,6 +498,13 @@ h1, h2, h3{
         line-height: 1.6;
         margin: 25px;
        }
+        
+       h2 {
+        font-size:medium;
+        font-weight: 550;
+        padding-left: 15px;
+        margin: 5px;
+    }
 
 
 
@@ -445,6 +514,21 @@ h1, h2, h3{
 
 
 
+
+
+}
+
+@media (min-width: 700px) {
+
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        }
+
+        .product {
+            width: 164px;
+            height: 275px;
+        }   
 
 
 
