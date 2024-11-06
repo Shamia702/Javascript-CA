@@ -46,7 +46,7 @@
             </div>
     <section class="collection">
             <h1>OUR COLLECTIONS </h1>
-
+            <div class="collections-container">
         <div class="n-arrival">
             <img src="images/new-arrivals.jpg" alt="our new collection" class="responsive-image">
             <button class="cta-button">NEW ARRIVALS</button>
@@ -61,54 +61,71 @@
             <img src="images/for-men.jpeg" alt="shop for men" class="responsive-image">
             <button class="cta-button">SHOP FOR MEN</button>
         </div>
+    </div>
     </section>
 
-    <section>
+    <section class="bestseller">
             <h2>BESTSELLERS</h2>
-            <div>
-                <img src="images/Jacket1.jpg" alt="grey orange jacket and designs on it with black color ">
-                <p>Grey and Black jacket for women- Perfect for all weathers.</p>
-                <P>NOK 350.00</P>
-                <button>Buy Now</button>
+            <div class="product-container">
+            <div class="product">
+                <img src="images/Jacket1.jpg" alt="grey orange jacket and designs on it with black color " class="product-imgs">
+                <p class="product-text">Grey and Black jacket for women- Perfect for all weathers.</p>
+                <P class="product-price">NOK 350.00</P>
+                <button class="buy-btn">Buy Now</button>
             </div>
-            <div>
-                <img src="images/Jacket2.jpg" alt="light black color jacket, stips on shoulder with grey color ">
-                <p>Men's Waterproof Rain Jacket, Lightweight AND Windbreaker For Hiking.</p>
-                <P>NOK 600.00</P>
-                <button>Buy Now</button>
+            <div class="product">
+                <img src="images/Jacket2.jpg" alt="light black color jacket, stips on shoulder with grey color" class="product-imgs">
+                <p class="product-text">Men's Waterproof Rain Jacket,<br>Windbreaker For Hiking.</p>
+                <P class="product-price">NOK 600.00</P>
+                <button class="buy-btn">Buy Now</button>
             </div>
-            <div>
-                <img src="images/Jacket3.jpg" alt="red and black jacket ">
-                <p>Men's Core Rain Jacket- red and black</p>
-                <P>NOK 550.00</P>
-                <button>Buy Now</button>
+            <div class="product">
+                <img src="images/Jacket3.jpg" alt="red and black jacket" class="product-imgs">
+                <p class="product-text">Men's Core Rain Jacket- red and black</p>
+                <P class="product-price">NOK 550.00</P>
+                <button class="buy-btn">Buy Now</button>
             </div>
-            <div>
-                <img src="images/Jacket4.jpg" alt="black jacket and some patterns on it with white colors ">
-                <p>Outdoor Everyday Rain Jacket Womens</p>
-                <P>NOK 250.00</P>
-                <button>Buy Now</button>
+            <div class="product">
+                <img src="images/Jacket4.jpg" alt="black jacket and some patterns on it with white colors" class="product-imgs">
+                <p class="product-text">Outdoor Everyday Rain Jacket Womens</p>
+                <P class="product-price">NOK 250.00</P>
+                <button class="buy-btn">Buy Now</button>
             </div>
-            <div>
-                <img src="images/Jacket5.jpg" alt="solid grey jacket ">
-                <p>Most Durable Backpacking Rain Jacket.</p>
-                <P>NOK 320.00</P>
-                <button>Buy Now</button>
+            <div class="product">
+                <img src="images/Jacket5.jpg" alt="solid grey jacket" class="product-imgs">
+                <p class="product-text">Most Durable Backpacking Rain Jacket.</p>
+                <P class="product-price">NOK 320.00</P>
+                <button class="buy-btn">Buy Now</button>
             </div>
-            <div>
-                <img src="images/Jacket6.jpg" alt="black colored jacket with some stips on sleeves with grey and some touches with white on chest ">
-                <p>Antora Rain Men-Hardshell jacket- Black.</p>
-                <P>NOK 399.00</P>
-                <button>Buy Now</button>
+            <div class="product">
+                <img src="images/Jacket6.jpg" alt="black colored jacket with some stips on sleeves with grey and some touches with white on chest" class="product-imgs">
+                <p class="product-text">Antora Rain Men-Hardshell jacket- Black.</p>
+                <P class="product-price">NOK 399.00</P>
+                <button class="buy-btn">Buy Now</button>
             </div>
+        </div>
         </section>
 
 </main>
 
 <footer>
+    <div class="footer-container-top">
+    <div class="newsletter-signup"></div>
+        <h3 class="footer-heading">Signup For Our Newsletter</h3>
+        <input type="email" name="email" id="email" placeholder="Enter your Email"><br>
+       <button class="subscribe-button">Subscribe</button>
+    </div>
+    <div class="socialmedia-icons">
+        <p class="follow-us">Follow Us On:</p>
+        <i class="fa-brands fa-instagram insta-icon"></i>
+        <i class="fa-brands fa-facebook fb-icon"></i>
+        <i class="fa-brands fa-twitter twitter-icon"></i>
+    </div>
+   </div>
 
-    <div>
-        <p>Information</p>
+    <div class="footer-container-bottom">
+    <div class="information">
+        <p class="text">Information</p>
         <ul>
             <li>FAQs</li>
             <li>Login/ Signup</li>
@@ -117,25 +134,16 @@
             <li>Shipping And Deliveries</li>
         </ul>
     </div>
-    <div>
-        <p>Customer Care</p>
+    <div class="customer-care">
+        <p class="text">Customer Care</p>
         <ul>
             <li><a href="about-us.html" target="_blank"> About Rainydays</a></li>
             <li><a href="contact-us.html" target="_blank"> Contact Us</a></li>
             <li>Work With Us</li>
         </ul>
     </div>
-    <div>
-        <p>Signup For Our Newsletter</p>
-        <input type="email" name="email" id="email" placeholder="Enter your Email">
-        <button>Subscribe</button>
-    </div>
-    <div>
-        <p>Follow Us On:</p>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
-    </div>
+</div>
+  <div class="footer-copyrite">Terms And Conditions    /     Privacy Policy</div>
 </footer>
 </body>
 </html> 
