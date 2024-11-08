@@ -207,7 +207,6 @@ h2 {
     justify-content:center;
     flex-wrap: wrap;
     gap: 20px;
-    border: 5px solid red;
     width: 100%;
     margin-top: 20px;
 
@@ -714,13 +713,6 @@ form fieldset {
         background-color: #A0C8DE;
     }
 
-    .product-container {
-        justify-content: space-around;
-       
-        margin: 12px;
-       
-    
-    }
 
        .subscribe-button {
         height: 28px;
@@ -766,7 +758,7 @@ form fieldset {
         bottom: 35px;
     }
 
-   .items-text,  {
+   .items-text  {
         font-size: 14px;
         padding-left: 10px;
         padding-top: 5px;
@@ -789,46 +781,69 @@ form fieldset {
 
     .product-container {
         display: flex;
-        flex-wrap: wrap;
+        justify-content:center;
+         gap: 28px;
+       margin-top: 20px;
+    
+    }
+
+    .product {
+        position: relative;
+        width: 197px;
+        height: 275px;
         }
 
-        .product {
-            width: 193px;
-            height: 275px;
-        }   
+        .product-imgs {
+           margin-left: 10px;
+        }
 
 
 
 }
 
-@media (min-width: 800px) {
+@media (max-width: 1000px) {
 
-    .product-container {
-        display: flex;
-        flex-wrap: wrap;
+    
+
+        .product-container {
+            display: flex;
+            justify-content:center;
+             gap: 36px;
+           margin-top: 20px;
+        
         }
 
         .product {
+            position: relative;
             width: 197px;
             height: 275px;
-        }   
+            }
+
+            .product-imgs {
+               margin-left: 10px;
+            }
 
 
 
 }
 
 
-@media (min-width: 1024px) {
+@media (mix-width: 856px) {
 
     .product-container {
-        display: flex;
-        flex-wrap: wrap;
+         gap: 25px;
+    
+    }
+
+    .product {
+        position: relative;
+        width: 197px;
+        height: 275px;
         }
 
-        .product {
-            width: 246px;
-            height: 278px;
-        }   
+        .product-imgs {
+           margin-left: 10px;
+        }
 
 
 
