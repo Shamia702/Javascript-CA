@@ -714,7 +714,7 @@ form fieldset {
         }
 
         .product {
-            width: 185px;
+            width: 193px;
             height: 275px;
         }   
 
@@ -722,7 +722,7 @@ form fieldset {
 
 }
 
-@media (min-width: 785px) {
+@media (min-width: 800px) {
 
     .product-container {
         display: flex;
@@ -730,7 +730,7 @@ form fieldset {
         }
 
         .product {
-            width: 190px;
+            width: 197px;
             height: 275px;
         }   
 
@@ -738,3 +738,19 @@ form fieldset {
 
 }
 
+
+@media (min-width: 1024px) {
+
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        }
+
+        .product {
+            width: 246px;
+            height: 278px;
+        }   
+
+
+
+}
