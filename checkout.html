@@ -22,6 +22,79 @@
            <i class="fa-solid fa-cart-shopping"></i>
         </div>
     </header>
+    <main>
+        <div class="form-container">
+       <form action="#" method="post">
+        <fieldset>
+            <legend>Contact</legend>
+            <input type="text" id="contact" name="contact" placeholder="Email or Phone number">
+            <label>
+                <input type="checkbox" name="newsletter">
+                Email me with news and offers
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Delivery</legend>
+            <label for="country" style="display: none;">Country</label>
+            <select id="country" name="country">
+                <option value="">Country</option>
+                <option value="norway">Norway</option>
+                <option value="germany">Germany</option>
+                <option value="sweden">Sweden</option>
+                <option value="spain">Spain</option>
+                <option value="paris">Paris</option>
+            </select>
+            <input type="text" name="first-name" id="first-name" placeholder="First name">
+            <input type="text" name="last-name" id="last-name" placeholder="Last name">
+            <input type="text" name="address" id="address" placeholder="Address">
+            <input type="text" name="suite" id="suite" placeholder="Apartment, suite etc (optional)">
+            <input type="text" name="city" id="city" placeholder="City">
+            <input type="text" name="postal-code" id="postal-code" placeholder="Postal code">
+            <input type="tel" name="phone" id="phone" placeholder="Phone">
+            <label>
+                <input type="checkbox" class="checkbox" name="newsletter">
+               Save this information for the next 
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Payment</legend>
+            <input type="text" name="google-pay" id="google-pay" placeholder="Google Pay">
+            <div class="card-container">
+            <input type="text" name="card-number" id="card-number" placeholder="Credit Card" maxlength="19" pattern="\d{4} \d{4} \d{4} \d{4}">
+            <div class="card-logos">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+            </div>
+        </div>
+        </fieldset>
+       </form>
+       <div class="checkout-item-container">
+        <div class="checkout-item">
+            <img src="images/Jacket4.jpg" alt="black and white jacket" class="checkout-item-image">
+            <div class="item-number">1</div>
+        <p class="item-description">Outdoor Everyday Rain Jacket Womens</p>
+       </div>
+        <div class="checkout-summary">
+            <p><span>Subtotal</span><span class="price">NOK 250.00</span></p>
+            <p><span>Shipping</span><span class="free">FREE</span></p><hr>
+            <p><span>Total</span><span class="total">NOK 250.00</span></p>
+        </div>
+        <button class="complete-order-btn">Complete Order</button>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <hr>
+        <div class="checkout-footer">
+            <p>Refund policy</p>
+            <p>Shipping policy</p>
+            <p>Privacy policy</p>
+            <p>Terms of service</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
