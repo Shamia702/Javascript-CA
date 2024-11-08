@@ -244,29 +244,39 @@ h2 {
     gap: 20px;
     border: 5px solid red;
     width: 100%;
-    
+    margin-top: 20px;
 
 }
 
 .items{
    position: relative;
    width: 35%;
-   height: 289px;
+   height: 291px;
    border: 1px solid black;
+   margin-top: 10px;
    }
 
 .items-img{
-    width: 100%;
-    border: 1px solid black;
-    height: 155px;
+    width: 65%;
+    height: auto;
+    padding: 8px;
+    margin: 15px;
+    margin-top: 10px;
+}
+
+.item-img {
+    width: 85%;
+    height: auto;
+    margin: 15px;
+    margin-top: 10px;
 }
 
 .items-price {
     position: absolute;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 530;
     margin: 0px;
-    bottom: 30px;
+    bottom: 35px;
 }
 
 .form-container {
@@ -771,6 +781,36 @@ form fieldset {
         margin: 5px;
     }
 
+    
+    .items{
+       height: 342px;
+       }
+    
+    .items-img{
+        margin: 10px;
+    }
+    
+    .item-img {
+        width: 85%;
+        height: auto;
+        margin: 15px;
+        margin-top: 10px;
+    }
+    
+    .items-price {
+        position: absolute;
+        font-size: 14px;
+        font-weight: 530;
+        margin: 0px;
+        bottom: 35px;
+    }
+
+   .items-text {
+        font-size: 14px;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+
 
 
 
@@ -807,7 +847,7 @@ form fieldset {
         }
 
         .product {
-            width: 198px;
+            width: 197px;
             height: 275px;
         }   
 
