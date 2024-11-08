@@ -353,8 +353,8 @@ form fieldset {
 
 .item-number {
     position: absolute;
-    bottom: 65px;
-    right: 245px;  
+    bottom: 80%;
+    right: 80%;  
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -393,6 +393,10 @@ form fieldset {
 
  .complete-order-btn {
     width: 90%;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid black;
+    color: #000;
     padding: 9px;
     border-radius: 10px;
     margin: 19px 15px;
@@ -803,7 +807,7 @@ form fieldset {
         }
 
         .product {
-            width: 197px;
+            width: 198px;
             height: 275px;
         }   
 
