@@ -178,33 +178,6 @@ h2 {
     font-weight: 550;
 }
 
-
-.product-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    margin: 7px;
-
-}
-
-.product {
-    position: relative;
-   width: 136px;
-   height: 270px;
-   margin: 6px;
-   display: flex;
-   flex-direction: column;
-   border: 1px solid black;
-   gap: 2px;
-   }
-
-.product-imgs{
-    width: 100%;
-    border: 1px solid black;
-    height: 140px;
-}
-
 .product-text, .items-text {
     text-align: left;
     font-size: 12px;
@@ -214,14 +187,6 @@ h2 {
     line-height: normal;
 }
 
-.product-price {
-    position: absolute;
-    font-size: 15px;
-    font-weight: 530;
-    padding: 2px;
-    margin: 4px;
-    bottom: 30px;
-}
 
 .buy-btn {
     position: absolute;
@@ -237,7 +202,7 @@ h2 {
    padding: 0px;
 }
 
-.items-container {
+.items-container, .product-container {
     display: flex;
     justify-content:center;
     flex-wrap: wrap;
@@ -248,7 +213,7 @@ h2 {
 
 }
 
-.items{
+.items, .product {
    position: relative;
    width: 35%;
    height: 291px;
@@ -256,7 +221,7 @@ h2 {
    margin-top: 10px;
    }
 
-.items-img{
+.items-img, .product-imgs {
     width: 65%;
     height: auto;
     padding: 8px;
@@ -271,7 +236,7 @@ h2 {
     margin-top: 10px;
 }
 
-.items-price {
+.items-price, .product-price {
     position: absolute;
     font-size: 14px;
     font-weight: 530;
@@ -757,10 +722,6 @@ form fieldset {
     
     }
 
-    .product {
-       width: 163px;
-       height: 275px;}
-
        .subscribe-button {
         height: 28px;
         bottom: 72px;
@@ -782,11 +743,11 @@ form fieldset {
     }
 
     
-    .items{
+    .items, .product {
        height: 342px;
        }
     
-    .items-img{
+    .items-img, .product-imgs{
         margin: 10px;
     }
     
@@ -797,7 +758,7 @@ form fieldset {
         margin-top: 10px;
     }
     
-    .items-price {
+    .items-price, .product-price {
         position: absolute;
         font-size: 14px;
         font-weight: 530;
@@ -805,10 +766,11 @@ form fieldset {
         bottom: 35px;
     }
 
-   .items-text {
+   .items-text,  {
         font-size: 14px;
         padding-left: 10px;
         padding-top: 5px;
+
     }
 
 
