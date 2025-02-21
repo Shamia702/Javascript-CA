@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Complete your purchase with our fast, easy checkout process. We also offer secure payment options and fast delivery to ensure a seamless shopping experience.">
     <title>CheckOut</title>
+    <!-- <script src="js/script.js" defer></script>  -->
+    <script src="js/checkout.js" defer></script>
+
+
     <script src="https://kit.fontawesome.com/2ae4b67056.js" crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -19,7 +23,7 @@
             </div>
        
         <div class="nav-icons">
-           <i class="fa-solid fa-cart-shopping"></i>
+           <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </header>
     <main>
@@ -71,19 +75,11 @@
         </fieldset>
        </form>
        <div class="checkout-item-container">
-        <div class="checkout-item">
-            <img src="images/Jacket4.jpg" alt="black and white jacket" class="checkout-item-image">
-            <div class="item-number">1</div>
-        <p class="item-description">Outdoor Everyday Rain Jacket Womens</p>
-       </div>
-        <div class="checkout-summary">
-            <p><span>Subtotal</span><span class="price">NOK 250.00</span></p>
-            <p><span>Shipping</span><span class="free">FREE</span></p><hr>
-            <p><span>Total</span><span class="total">NOK 250.00</span></p>
-        </div>
-        <a href="success.html" class="complete-order-btn">Complete Order</a>
-        </div>
+    
     </div>
+    <div class="complete-order-btn"> 
+        <a href="success.html" id="complete-order-btn">Complete Order</a>
+        </div>
     </main>
     <footer>
         <hr>
