@@ -32,7 +32,12 @@ let productPageData = async ()=>{
             <div class="product-page-item">
                 <img src="${product.image.url}" alt="${product.image.alt}" class="product-page-image">
                 <p class="product-description">${product.title}</p>
-                <P class="product-page-price">NOK ${product.price}</P>
+                ${
+                    product.onSale 
+                        ? `<p class="product-page-original-price">NOK <s>${product.price}</s></p>
+                          <p class="product-page-discounted-price">NOK ${product.discountedPrice}</p>`
+                         : `<p class="product-page-price">NOK ${product.price}</p>`
+                            }
                 
             </div>
             <div class="product-options">
@@ -122,15 +127,6 @@ function total() {
     if (cartIcon) {
         let totalQuantity = basket.reduce((total, item) => total + item.item, 0);
         cartIcon.innerHTML = totalQuantity;
-    }
-    function showCartNotification() {
-        let notification = document.getElementById("cart-message");
-        notification.style.display = "block";
-    
-        // Hide after 2 seconds
-        setTimeout(() => {
-            notification.style.display = "none";
-        }, 2000);
     }
    
 }

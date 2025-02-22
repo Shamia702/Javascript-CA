@@ -9,10 +9,12 @@ let allGender=[];
     let displayItems = async (allCheckGender = [])=>{
     itemsContainer.innerHTML='';
     try{
+        // Start showing loader
         let response = await fetch('https://v2.api.noroff.dev/rainy-days')
         let finalItems = await response.json();
-
-        finalItems.data.forEach((element) => { 
+        let products = finalItems.data;
+        // Stop Loader
+        products.forEach((element) => { 
 
         if(!allGender.includes(element.gender)){   
          genderListContainer.innerHTML +=`
@@ -27,10 +29,16 @@ let allGender=[];
 
        itemsContainer.innerHTML += `
          <div class="items">
-                <img src="${element.image.url}" alt="${element.image.alt}"  class="items-img">
-                <p class="items-text">${element.title}</p>
-                <P class="items-price">NOK ${element.price}</P>
-                <a href="product.html?id=${element.id}" class="buy-btn">Buy Now</a>
+                <a href="product.html?id=${element.id}">
+                        <img src="${element.image.url}" alt="${element.image.alt}"  class="items-img">
+                        <p class="items-text">${element.title}</p>
+                         ${
+                                element.onSale 
+                                ? `<p class="items-price original-price">NOK <s>${element.price}</s></p>
+                                   <p class="items-discounted-price">NOK ${element.discountedPrice}</p>`
+                                : `<p class="items-price">NOK ${element.price}</p>`
+                            }
+                </a>
         </div>`
     }
 

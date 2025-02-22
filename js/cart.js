@@ -18,7 +18,7 @@ let generateCartItems = async () => {
                 let product = productData.data;
                 let search = basket.find((item) => item.id === x.id) || { item: 0 };
                 
-                productPrices[x.id] = Number(product.price);
+                productPrices[x.id] = product.onSale ? Number(product.discountedPrice) : Number(product.price);
 
                 return `
                     <div class="cart-items">
@@ -26,7 +26,13 @@ let generateCartItems = async () => {
                         <div class="cart-item-details">
                         <div class= "title-price-x">
                         <p class= "cart-product-title">${product.title}</p>
-                        <p class="cart-product-price">NOK ${product.price}</p>
+                        ${
+                    product.onSale 
+                        ? `<p class="product-page-original-price">NOK <s>${product.price}</s></p>
+                          <p class="product-page-discounted-price">NOK ${product.discountedPrice}</p>`
+                         : `<p class="product-page-price">NOK ${product.price}</p>`
+                            }
+                
                         
                         </div>
                          <div class="cart-btns">
@@ -144,7 +150,6 @@ let increaseBtn = (productId) => {
             .reduce((x, y) => x + y, 0)
             .toFixed(2); 
 
-        // console.log("Total Amount:", total);
             totalBillContainer.innerHTML = `
           <p class="total-bill"><span class="total-bill-bold">Total Bill: </span>NOK ${amount}</p>
        <div class="button-container">

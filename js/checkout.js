@@ -16,7 +16,9 @@ let checkoutPageData = async () => {
     let finalItems = await response.json();
 
     let product = finalItems.data;
-    displayCheckoutData(product, checkoutItem.quantity);
+    let productPrice = product.onSale ? product.discountedPrice : product.price;
+
+    displayCheckoutData(product, checkoutItem.quantity, productPrice);
     } catch (error) {
         console.error("Error fetching data:", error);
     }
