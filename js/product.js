@@ -133,28 +133,17 @@ function total() {
    
 }
 
-// function buyNow(productId) {
-//     let checkoutItem = {
-//         id: productId,
-//         quantity: tempQuantity, // Get current quantity
-//     };
-
-//     localStorage.setItem("checkoutItem", JSON.stringify(checkoutItem));
-
-//     // Redirect to checkout page
-//     window.location.href = "checkout.html";
-// }
 function buyNow(productId) {
     let productQuantity = parseInt(document.getElementById("quantity-input").value, 10) || 1;
 
     let checkoutItem = {
         id: productId,
-        item: productQuantity // ✅ Ensure it follows cart format
+        item: productQuantity 
     };
 
     localStorage.setItem("checkoutItem", JSON.stringify(checkoutItem));
 
-    // Redirect to checkout page
+   
     window.location.href = "checkout.html";
 }
 

@@ -12,7 +12,7 @@ let generateCartItems = async (showLoader = true) => {
     const loader = document.getElementById("loader");
 
     if (showLoader && loader) {
-        loader.style.display = "flex"; // Show loader only when needed
+        loader.style.display = "flex"; 
     }
 
     if (basket.length !== 0) {
@@ -69,7 +69,7 @@ let generateCartItems = async (showLoader = true) => {
     }
 
     if (loader) {
-        loader.style.display = "none"; // Hide loader once done
+        loader.style.display = "none"; 
     }
 };
 
