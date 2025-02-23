@@ -12,11 +12,10 @@ let allGender=[];
     
     itemsContainer.innerHTML='';
     try{
-        // Start showing loader
+
         let response = await fetch('https://v2.api.noroff.dev/rainy-days')
         let finalItems = await response.json();
         let products = finalItems.data;
-        // Stop Loader
         products.forEach((element) => { 
 
         if(!allGender.includes(element.gender)){   
@@ -61,13 +60,11 @@ let CategoryFilter = (selectedCheckbox) => {
 
     checkboxInput.forEach((checkbox) => {
         if (checkbox !== selectedCheckbox) {
-            checkbox.checked = false; // Uncheck all other checkboxes
+            checkbox.checked = false; 
         }
     });
 
     let selectedGender = selectedCheckbox.checked ? selectedCheckbox.value : null;
-
-    // If no checkboxes are checked, show all items
     displayItems(selectedGender ? [selectedGender] : []);
 };
 

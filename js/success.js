@@ -1,7 +1,5 @@
 
 const orderNumber = localStorage.getItem("orderNumber");
-
-// Select the element where the success message will be displayed
 const successMessageContainer = document.querySelector(".success-message");
 
 if (orderNumber) {
@@ -11,8 +9,6 @@ if (orderNumber) {
         <p>We will send you an email confirmation shortly.</p>
         <a href="index.html" class="continue-shopping-btn">Continue Shopping</a>
     `;
-    
-    // Remove order number after displaying it
     localStorage.removeItem("orderNumber");
 } else {
     successMessageContainer.innerHTML = `

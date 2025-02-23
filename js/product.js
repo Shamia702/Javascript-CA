@@ -38,11 +38,11 @@ let productPageData = async ()=>{
                 <img src="${product.image.url}" alt="${product.image.alt}" class="product-page-image">
                 <p class="product-description">${product.title}</p>
                 ${
-                                product.onSale 
-                                ? `<p class="product-page-original-price">NOK <s>${product.price}</s></p>
-                                   <p class="product-page-discounted-price">NOK ${product.discountedPrice}</p>`
-                                : `<p class="product-page-price">NOK ${product.price}</p>`
-                            }
+                    product.onSale 
+                    ? `<p class="product-page-original-price">NOK <s>${product.price}</s></p>
+                    <p class="product-page-discounted-price">NOK ${product.discountedPrice}</p>`
+                    : `<p class="product-page-price">NOK ${product.price}</p>`
+                }
                 
             </div>
             <div class="product-options">
@@ -95,37 +95,31 @@ function addToCart(productId) {
     let search = basket.find((x) => x.id === productId);
 
     if (search === undefined) {
-        // Add new item to the basket
         basket.push({
             id: productId,
             item: tempQuantity,
         });
     } else {
-        // Update quantity of existing item
         search.item += tempQuantity;
     }
 
-    // Save updated basket to localStorage
     localStorage.setItem("data", JSON.stringify(basket));
 
     total();
-   
     showPopup();
-    // tempQuantity = 0;
-    // document.getElementById("quantity-input").value = tempQuantity;
 }
 
 function showPopup() {
     const popup = document.getElementById("cart-popup");
-    popup.style.display = "block";  // Show popup
-    popup.style.opacity = "1";  // Full opacity
+    popup.style.display = "block"; 
+    popup.style.opacity = "1";  
 
     setTimeout(() => {
-        popup.style.opacity = "0";  // Start fade out
+        popup.style.opacity = "0"; 
         setTimeout(() => {
-            popup.style.display = "none"; // Hide after fade-out
+            popup.style.display = "none"; 
         }, 500);
-    }, 2000);  // Keep it visible for 2 seconds
+    }, 2000);  
 }
 function total() {
     let cartIcon = document.getElementById("cartquantity");
@@ -136,28 +130,15 @@ function total() {
    
 }
 
-// function buyNow(productId) {
-//     let checkoutItem = {
-//         id: productId,
-//         quantity: tempQuantity, // Get current quantity
-//     };
-
-//     localStorage.setItem("checkoutItem", JSON.stringify(checkoutItem));
-
-//     // Redirect to checkout page
-//     window.location.href = "checkout.html";
-// }
 function buyNow(productId) {
     let productQuantity = parseInt(document.getElementById("quantity-input").value, 10) || 1;
 
     let checkoutItem = {
         id: productId,
-        item: productQuantity // ✅ Ensure it follows cart format
+        item: productQuantity 
     };
 
     localStorage.setItem("checkoutItem", JSON.stringify(checkoutItem));
-
-    // Redirect to checkout page
     window.location.href = "checkout.html";
 }
 

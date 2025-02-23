@@ -10,12 +10,10 @@ const saleItemsContainer = document.querySelector(".product-container");
 
     saleItemsContainer.innerHTML='';
     try{
-        // Starting loading
     let response = await fetch('https://v2.api.noroff.dev/rainy-days')
     let finalItems = await response.json();
     let products = finalItems.data;
     let onSaleProducts = products.filter(product => product.onSale === true);
-    // Stop loading
     onSaleProducts.forEach(element => { 
         saleItemsContainer.innerHTML += `
        <div class="product">

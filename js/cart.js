@@ -95,7 +95,7 @@ let increaseBtn = (productId) => {
     
     if (search.item === undefined) return;
     else if (search.item === 0) return;
-     else{
+    else{
         search.item -= 1;
     }
     update(productId);
@@ -157,11 +157,11 @@ let increaseBtn = (productId) => {
             .toFixed(2); 
 
             totalBillContainer.innerHTML = `
-          <p class="total-bill"><span class="total-bill-bold">Total Bill: </span>NOK ${amount}</p>
-       <div class="button-container">
-    <a href="checkout.html"><button onclick="proceedToCheckout()"class="cartcheckoutbtn">Proceed to Checkout</button></a>
-    <button onclick="clearCart()"class="clearcartbtn">Clear Cart</button>
-</div> `
+             <p class="total-bill"><span class="total-bill-bold">Total Bill: </span>NOK ${amount}</p>
+        <div class="button-container">
+            <a href="checkout.html"><button onclick="proceedToCheckout()"class="cartcheckoutbtn">Proceed to Checkout</button></a>
+            <button onclick="clearCart()"class="clearcartbtn">Clear Cart</button>
+        </div> `
         }  else {
            
             totalBillContainer.innerHTML = "";
