@@ -142,9 +142,18 @@ let increaseBtn = (productId) => {
         basket = []
         localStorage.removeItem("data");
         localStorage.removeItem("checkoutCart")
-        generateCartItems();
-        total();
-        totalAmount();
+        shoppingCart.innerHTML = "";
+        document.getElementById("total-bill-container").innerHTML = "";
+        emptyCart.innerHTML = `
+            <h5>Your Cart is Empty</h5>
+            <a href="view-all.html">
+                <button class="viewallbtn">Continue Shopping</button>
+            </a>
+        `;
+        let cartIcon = document.getElementById("cartquantity");
+    if (cartIcon) {
+        cartIcon.innerHTML = "0";
+    }
     }
 
     let totalAmount = ()=>{
@@ -157,7 +166,7 @@ let increaseBtn = (productId) => {
             .toFixed(2); 
 
             totalBillContainer.innerHTML = `
-             <p class="total-bill"><span class="total-bill-bold">Total Bill: </span>NOK ${amount}</p>
+                <p class="total-bill"><span class="total-bill-bold">Total Bill: </span>NOK ${amount}</p>
         <div class="button-container">
             <a href="checkout.html"><button onclick="proceedToCheckout()"class="cartcheckoutbtn">Proceed to Checkout</button></a>
             <button onclick="clearCart()"class="clearcartbtn">Clear Cart</button>
