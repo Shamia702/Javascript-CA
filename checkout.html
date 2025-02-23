@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Complete your purchase with our fast, easy checkout process. We also offer secure payment options and fast delivery to ensure a seamless shopping experience.">
     <title>CheckOut</title>
-    <!-- <script src="js/script.js" defer></script>  -->
     <script src="js/checkout.js" defer></script>
 
 
@@ -15,6 +14,9 @@
 </head>
 
 <body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
     <header>
             <div class="logo-container">
                 <a href="index.html">
@@ -22,9 +24,13 @@
                 </a>
             </div>
        
-        <div class="nav-icons">
-           <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+            <div class="nav-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <a href="cart.html" class="cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div id="cartquantity" class="cartquantity">0</div>
+                </a>
+            </div>
     </header>
     <main>
         <div class="form-container">
@@ -74,12 +80,10 @@
         </div>
         </fieldset>
        </form>
-       <div class="checkout-item-container">
-    
-    </div>
-    <div class="complete-order-btn"> 
-        <a href="success.html" id="complete-order-btn">Complete Order</a>
-        </div>
+       <div class="checkout-item-container"></div> 
+        <div class="checkout-summary"></div> 
+
+   
     </main>
     <footer>
         <hr>

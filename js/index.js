@@ -5,6 +5,9 @@ window.onload = function() {
 const saleItemsContainer = document.querySelector(".product-container");
 
     let generateProducts = async ()=>{
+        const loader = document.getElementById("loader");
+    loader.style.display = "flex"; 
+
     saleItemsContainer.innerHTML='';
     try{
         // Starting loading
@@ -26,6 +29,8 @@ const saleItemsContainer = document.querySelector(".product-container");
     })
 }catch (error) {
     console.error("Error fetching data:", error);
+    } finally {
+        loader.style.display = "none";
     }
 };
 

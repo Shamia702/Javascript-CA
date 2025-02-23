@@ -7,10 +7,11 @@
     <meta name="description" content="Thank you for your purchase, your order has been confirmed">
     <title>Success</title>
     <script src="https://kit.fontawesome.com/2ae4b67056.js" crossorigin="anonymous"></script>
+    <script src="js/success.js" defer></script>
     <link rel="stylesheet" href="./css/styles.css">
-
 </head>
 <body>
+    
     <header>
         <input type="checkbox" id="menu-checkbox">
             <label for="menu-checkbox" class="menu-icon"><i class="fa-solid fa-bars"></i>
@@ -30,19 +31,16 @@
         </nav>
        
         <div class="nav-icons">
-           <i class="fa-solid fa-magnifying-glass"></i>
-           <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="cart.html" class="cart-link">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div id="cartquantity" class="cartquantity">0</div>
+            </a>
         </div>
     </header>
     <main>
-        <div class="success-container">
-        <img src="images/success-icon.jpg" class="order-confirmation-icon" alt="order confirmation icon">
-         <h1>Order Confirmed!</h1>
-         <p>Thank you for your purchase. Your order has been placed successfully! We’ll be in touch soon!"</p>
-         <a href="index.html"  class="go-to-homepage-btn"> Go to Homepage</a>
-        
-      
-        </div>
+       
+         <div class="success-message"></div>
     </main>
     <footer>
         <div class="footer-container-top">

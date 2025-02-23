@@ -12,6 +12,9 @@ const findUrl = new URLSearchParams(window.location.search)
 
  
 let productPageData = async ()=>{
+    loader = document.getElementById("loader");
+        loader.style.display = "flex"; 
+    
     try{
     let response = await fetch(`https://v2.api.noroff.dev/rainy-days/${productId}`)
     let finalItems = await response.json();
@@ -21,6 +24,8 @@ let productPageData = async ()=>{
 
     }catch (error) {
     console.error("Error fetching data:", error);
+    } finally {
+        loader.style.display = "none";
     }
     };
 
@@ -33,10 +38,10 @@ let productPageData = async ()=>{
                 <img src="${product.image.url}" alt="${product.image.alt}" class="product-page-image">
                 <p class="product-description">${product.title}</p>
                 ${
-                    product.onSale 
-                        ? `<p class="product-page-original-price">NOK <s>${product.price}</s></p>
-                          <p class="product-page-discounted-price">NOK ${product.discountedPrice}</p>`
-                         : `<p class="product-page-price">NOK ${product.price}</p>`
+                                product.onSale 
+                                ? `<p class="product-page-original-price">NOK <s>${product.price}</s></p>
+                                   <p class="product-page-discounted-price">NOK ${product.discountedPrice}</p>`
+                                : `<p class="product-page-price">NOK ${product.price}</p>`
                             }
                 
             </div>
@@ -131,10 +136,23 @@ function total() {
    
 }
 
+// function buyNow(productId) {
+//     let checkoutItem = {
+//         id: productId,
+//         quantity: tempQuantity, // Get current quantity
+//     };
+
+//     localStorage.setItem("checkoutItem", JSON.stringify(checkoutItem));
+
+//     // Redirect to checkout page
+//     window.location.href = "checkout.html";
+// }
 function buyNow(productId) {
+    let productQuantity = parseInt(document.getElementById("quantity-input").value, 10) || 1;
+
     let checkoutItem = {
         id: productId,
-        quantity: tempQuantity, // Get current quantity
+        item: productQuantity // ✅ Ensure it follows cart format
     };
 
     localStorage.setItem("checkoutItem", JSON.stringify(checkoutItem));
@@ -142,5 +160,6 @@ function buyNow(productId) {
     // Redirect to checkout page
     window.location.href = "checkout.html";
 }
+
 
 productPageData();

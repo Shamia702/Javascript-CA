@@ -6,7 +6,10 @@ const itemsContainer = document.querySelector(".items-container");
 let genderListContainer = document.querySelector(".genderList");
 let allGender=[];
 
-    let displayItems = async (allCheckGender = [])=>{
+    let displayItems = async (allCheckGender = [])=>{const
+         loader = document.getElementById("loader");
+        loader.style.display = "flex"; 
+    
     itemsContainer.innerHTML='';
     try{
         // Start showing loader
@@ -46,6 +49,8 @@ let allGender=[];
 
 } catch (error) {
 console.error("Error fetching data:", error);
+} finally {
+    loader.style.display = "none";
 }
 };
 

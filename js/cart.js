@@ -10,6 +10,8 @@ let basket = JSON.parse(localStorage.getItem("data")) || [];
 let productPrices = {};
 
 let generateCartItems = async () => {
+    const loader = document.getElementById("loader");
+    loader.style.display = "flex"; 
     if (basket.length !== 0) {
         let cartItemsHTML = await Promise.all(basket.map(async (x) => {
             try {
@@ -52,6 +54,8 @@ let generateCartItems = async () => {
             } catch (error) {
                 console.error("Error fetching product details:", error);
                 return ``; 
+            } finally {
+                loader.style.display = "none";
             }
         }));
 
@@ -99,6 +103,7 @@ let increaseBtn = (productId) => {
     generateCartItems();
     localStorage.setItem("data", JSON.stringify(basket));
     updateCartQuantity(); 
+    totalAmount(); 
     };
     
     let update = (productId) => {
@@ -135,8 +140,9 @@ let increaseBtn = (productId) => {
 
     let clearCart = ()=>{
         basket = []
+        localStorage.removeItem("data");
+        localStorage.removeItem("checkoutCart")
         generateCartItems();
-        localStorage.setItem("data", JSON.stringify(basket));
         total();
         totalAmount();
     }
@@ -153,7 +159,7 @@ let increaseBtn = (productId) => {
             totalBillContainer.innerHTML = `
           <p class="total-bill"><span class="total-bill-bold">Total Bill: </span>NOK ${amount}</p>
        <div class="button-container">
-    <a href="checkout.html"><button class="cartcheckoutbtn">Proceed to Checkout</button></a>
+    <a href="checkout.html"><button onclick="proceedToCheckout()"class="cartcheckoutbtn">Proceed to Checkout</button></a>
     <button onclick="clearCart()"class="clearcartbtn">Clear Cart</button>
 </div> `
         }  else {
@@ -162,5 +168,16 @@ let increaseBtn = (productId) => {
         }
     
     }
+    function proceedToCheckout() {
+        if (basket.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+    
+        localStorage.setItem("checkoutCart", JSON.stringify(basket)); 
+        localStorage.removeItem("data")
+        window.location.href = "checkout.html"; 
+    }
+    
     generateCartItems(); 
     
