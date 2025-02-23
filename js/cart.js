@@ -8,10 +8,13 @@ let shoppingCart = document.getElementById("shopping-cart");
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 let productPrices = {};
-
-let generateCartItems = async () => {
+let generateCartItems = async (showLoader = true) => {
     const loader = document.getElementById("loader");
-    loader.style.display = "flex"; 
+
+    if (showLoader && loader) {
+        loader.style.display = "flex"; // Show loader only when needed
+    }
+
     if (basket.length !== 0) {
         let cartItemsHTML = await Promise.all(basket.map(async (x) => {
             try {
@@ -24,38 +27,32 @@ let generateCartItems = async () => {
 
                 return `
                     <div class="cart-items">
-                        <img width= "100" src="${product.image.url}" alt="${product.image.alt}" class="cart-item-image">
+                        <img width="100" src="${product.image.url}" alt="${product.image.alt}" class="cart-item-image">
                         <div class="cart-item-details">
-                        <div class= "title-price-x">
-                        <p class= "cart-product-title">${product.title}</p>
-                        ${
-                    product.onSale 
-                        ? `<p class="product-page-original-price">NOK <s>${product.price}</s></p>
-                          <p class="product-page-discounted-price">NOK ${product.discountedPrice}</p>`
-                         : `<p class="product-page-price">NOK ${product.price}</p>`
-                            }
-                
-                        
-                        </div>
-                         <div class="cart-btns">
-                                <button class="decrease-btn"onclick="decreaseBtn('${x.id}')">−</button>
+                            <div class="title-price-x">
+                                <p class="cart-product-title">${product.title}</p>
+                                ${
+                                    product.onSale 
+                                        ? `<p class="product-page-original-price">NOK <s>${product.price}</s></p>
+                                          <p class="product-page-discounted-price">NOK ${product.discountedPrice}</p>`
+                                        : `<p class="product-page-price">NOK ${product.price}</p>`
+                                }
+                            </div>
+                            <div class="cart-btns">
+                                <button class="decrease-btn" onclick="decreaseBtn('${x.id}')">−</button>
                                 <input type="text" id="quantity-${x.id}" value="${search.item}" readonly>
                                 <button class="increase-btn" onclick="increaseBtn('${x.id}')">+</button>
                             </div>
                             <div class="cart-price-delete">
-                         <h3 class="total-price">NOK ${(search.item * productPrices[x.id]).toFixed(2)}</h3>
-
-                         <i class="fa-solid fa-trash" onclick="removeItem('${x.id}')"></i>
-                         </div>
-
+                                <h3 class="total-price">NOK ${(search.item * productPrices[x.id]).toFixed(2)}</h3>
+                                <i class="fa-solid fa-trash" onclick="removeItem('${x.id}')"></i>
+                            </div>
                         </div>
                     </div>
                 `;
             } catch (error) {
                 console.error("Error fetching product details:", error);
                 return ``; 
-            } finally {
-                loader.style.display = "none";
             }
         }));
 
@@ -70,8 +67,14 @@ let generateCartItems = async () => {
             </a>
         `;
     }
+
+    if (loader) {
+        loader.style.display = "none"; // Hide loader once done
+    }
 };
 
+
+    
 let increaseBtn = (productId) => {
     let search = basket.find((x)=> x.id=== productId )
     
@@ -142,18 +145,9 @@ let increaseBtn = (productId) => {
         basket = []
         localStorage.removeItem("data");
         localStorage.removeItem("checkoutCart")
-        shoppingCart.innerHTML = "";
-        document.getElementById("total-bill-container").innerHTML = "";
-        emptyCart.innerHTML = `
-            <h5>Your Cart is Empty</h5>
-            <a href="view-all.html">
-                <button class="viewallbtn">Continue Shopping</button>
-            </a>
-        `;
-        let cartIcon = document.getElementById("cartquantity");
-    if (cartIcon) {
-        cartIcon.innerHTML = "0";
-    }
+        generateCartItems();
+        total();
+        totalAmount();
     }
 
     let totalAmount = ()=>{

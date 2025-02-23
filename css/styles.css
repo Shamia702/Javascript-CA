@@ -961,6 +961,40 @@ font-weight: bold;
     transition: background 0.3s;
 }
 
+.size-alert {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    z-index: 1000;
+}
+
+.size-alert p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.size-alert button {
+    margin-top: 15px;
+    background-color: #ff4747;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.size-alert button:hover {
+    background-color: #ff6b6b;
+}
+
 .continue-shopping-btn:hover {
     background-color: #8BB0C9;
 }
