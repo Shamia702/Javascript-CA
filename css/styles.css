@@ -175,22 +175,27 @@ a{
     padding: 10px; /* Added padding for better spacing */
 
 }
-
+/* 
 .n-arrival, .f-women, .f-men {
     width: 90%; 
     max-width: 350px; 
     position: relative;
     margin: 10px 0;
+} */
+
+.n-arrival, .f-women, .f-men {
+  width: 300px;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Collection Images */
 .responsive-image {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    max-height: 250px; /* Limit height to avoid oversized images */
+    height: 250px; 
     object-fit: cover; 
     border-radius: 8px;
-    display: block; /* Removes extra space under images */
+    display: block;
 }
 .cta-button {
     display: flex;
@@ -981,7 +986,7 @@ font-weight: bold;
     }
 
     .responsive-image {
-        max-height: 200px; 
+        height: 250px; 
     }
 
     .cta-button {

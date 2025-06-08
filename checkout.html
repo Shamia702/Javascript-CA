@@ -37,7 +37,7 @@
        <form action="#" method="post">
         <fieldset>
             <legend>Contact</legend>
-            <input type="text" id="contact" name="contact" placeholder="Email or Phone number">
+            <input type="text" id="contact" name="contact" placeholder="Email or Phone number" required>
             <label>
                 <input type="checkbox" name="newsletter">
                 Email me with news and offers
@@ -47,7 +47,7 @@
         <fieldset>
             <legend>Delivery</legend>
             <label for="country" style="display: none;">Country</label>
-            <select id="country" name="country">
+            <select id="country" name="country" required>
                 <option value="">Country</option>
                 <option value="norway">Norway</option>
                 <option value="germany">Germany</option>
@@ -55,13 +55,13 @@
                 <option value="spain">Spain</option>
                 <option value="paris">Paris</option>
             </select>
-            <input type="text" name="first-name" id="first-name" placeholder="First name">
-            <input type="text" name="last-name" id="last-name" placeholder="Last name">
-            <input type="text" name="address" id="address" placeholder="Address">
+            <input type="text" name="first-name" id="first-name" placeholder="First name" required>
+            <input type="text" name="last-name" id="last-name" placeholder="Last name" required>
+            <input type="text" name="address" id="address" placeholder="Address" required>
             <input type="text" name="suite" id="suite" placeholder="Apartment, suite etc (optional)">
             <input type="text" name="city" id="city" placeholder="City">
-            <input type="text" name="postal-code" id="postal-code" placeholder="Postal code">
-            <input type="tel" name="phone" id="phone" placeholder="Phone">
+            <input type="text" name="postal-code" id="postal-code" placeholder="Postal code" required>
+            <input type="tel" name="phone" id="phone" placeholder="Phone" required>
             <label>
                 <input type="checkbox" class="checkbox" name="newsletter">
                Save this information for the next 
